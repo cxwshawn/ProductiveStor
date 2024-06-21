@@ -8,6 +8,14 @@ MinIO is a High Performance Object Storage released under GNU Affero General Pub
 
 This README provides quickstart instructions on running MinIO on bare metal hardware, including container-based installations. For Kubernetes environments, use the [MinIO Kubernetes Operator](https://github.com/minio/operator/blob/master/README.md).
 
+# Extend 
+Minio will be used as a distributed gateway service that can interface with various storage services such as Ceph and Daos，etc. Metadata can also be independently interfaced with distributed KV databases. The design goals are as follows:
+
+1、Can be expanded into a large-scale storage cluster;
+2、Supports high-performance, massive small file storage;
+3、Can directly manage multiple storage clusters from the data plane, no longer a single-point gateway, and is no longer limited by the bottlenecks of the underlying storage engine;
+4、Can extend more service capabilities at the Minio layer, such as deduplication, bucket tiering capabilities, etc.
+
 ## Container Installation
 
 Use the following commands to run a standalone MinIO server as a container.
